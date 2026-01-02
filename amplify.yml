@@ -4,6 +4,12 @@ frontend:
     preBuild:
       commands:
         - echo "Installing Git LFS..."
+        - |
+          if ! command -v git-lfs &> /dev/null; then
+            echo "Git LFS not found, installing..."
+            curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash
+            sudo yum install -y git-lfs
+          fi
         - git lfs install
         - echo "Pulling Git LFS files..."
         - 'git lfs pull --include="*.mp4"'
