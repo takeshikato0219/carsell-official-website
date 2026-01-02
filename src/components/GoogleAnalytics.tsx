@@ -14,15 +14,31 @@ export default function GoogleAnalytics() {
       const url = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : "");
       window.gtag("config", gaMeasurementId, {
         page_path: url,
+        page_location: window.location.href,
       });
     }
   }, [pathname, searchParams, gaMeasurementId]);
 
+  // デバッグ用：Google Analyticsの読み込み確認
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      console.log("Google Analytics Measurement ID:", gaMeasurementId);
+      console.log("Current URL:", window.location.href);
+    }
+  }, [gaMeasurementId]);
+
   return (
     <>
+      {/* Google tag (gtag.js) */}
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+        onLoad={() => {
+          console.log("Google Analytics script loaded");
+        }}
+        onError={() => {
+          console.error("Failed to load Google Analytics script");
+        }}
       />
       <Script
         id="google-analytics"
@@ -32,7 +48,11 @@ export default function GoogleAnalytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gaMeasurementId}');
+            gtag('config', '${gaMeasurementId}', {
+              page_path: window.location.pathname,
+              page_location: window.location.href,
+            });
+            console.log('Google Analytics initialized with ID: ${gaMeasurementId}');
           `,
         }}
       />
