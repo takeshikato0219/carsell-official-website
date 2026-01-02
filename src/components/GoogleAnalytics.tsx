@@ -2,9 +2,9 @@
 
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
-export default function GoogleAnalytics() {
+function GoogleAnalyticsContent() {
   const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-6ECXY88QQ9";
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -26,6 +26,12 @@ export default function GoogleAnalytics() {
       console.log("Current URL:", window.location.href);
     }
   }, [gaMeasurementId]);
+
+  return null;
+}
+
+export default function GoogleAnalytics() {
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-6ECXY88QQ9";
 
   return (
     <>
@@ -56,7 +62,9 @@ export default function GoogleAnalytics() {
           `,
         }}
       />
+      <Suspense fallback={null}>
+        <GoogleAnalyticsContent />
+      </Suspense>
     </>
   );
 }
-
