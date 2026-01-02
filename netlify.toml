@@ -5,6 +5,12 @@
   command = "bun run build"
   publish = ".next"
 
+[[redirects]]
+  from = "/google9697a52b11bd4d12.html"
+  to = "/google9697a52b11bd4d12.html"
+  status = 200
+  force = true
+
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
