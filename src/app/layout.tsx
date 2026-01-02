@@ -259,6 +259,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#255668" />
         <meta name="format-detection" content="telephone=yes" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
         {googleSiteVerification && (
           <meta name="google-site-verification" content={googleSiteVerification} />
         )}

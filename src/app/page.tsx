@@ -101,6 +101,8 @@ export default function Home() {
         to_name: "CARSELL",
       };
 
+      // EmailJS v4では、publicKeyを第4引数として渡す必要がある
+      // 403エラーが発生する場合は、EmailJSの設定でドメイン（www.caesell.net）を許可リストに追加してください
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
       setSubmitStatus("success");
@@ -118,8 +120,15 @@ export default function Home() {
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.error("EmailJS送信エラー:", error);
+      console.error("エラー詳細:", {
+        message: error?.text || error?.message,
+        status: error?.status,
+        serviceId,
+        templateId,
+        publicKey,
+      });
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
