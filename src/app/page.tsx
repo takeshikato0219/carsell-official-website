@@ -120,11 +120,14 @@ export default function Home() {
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("EmailJS送信エラー:", error);
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      const errorStatus = (error as { status?: number })?.status;
+      const errorText = (error as { text?: string })?.text;
       console.error("エラー詳細:", {
-        message: error?.text || error?.message,
-        status: error?.status,
+        message: errorText || errorMessage,
+        status: errorStatus,
         serviceId,
         templateId,
         publicKey,
