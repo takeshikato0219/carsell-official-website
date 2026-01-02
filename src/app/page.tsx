@@ -7,6 +7,7 @@ export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [videoError, setVideoError] = useState(false);
   const [formData, setFormData] = useState({
     company: "",
     name: "",
@@ -158,19 +159,24 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center pt-28 overflow-hidden bg-[#020617]">
         {/* Video Background - Full on mobile, Right side on desktop */}
         <div className="absolute inset-0 lg:left-auto lg:right-0 lg:w-[55%] z-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            aria-label="自動車営業ツールCARSELLの紹介動画"
-            preload="auto"
-            style={{ zIndex: 0 }}
-          >
-            <source src="/video-1765107210260.mp4" type="video/mp4" />
-            <source src="/hero-bg.mp4" type="video/mp4" />
-          </video>
+          {!videoError ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+              aria-label="自動車営業ツールCARSELLの紹介動画"
+              preload="auto"
+              style={{ zIndex: 0 }}
+              onError={() => setVideoError(true)}
+            >
+              <source src="/video-1765107210260.mp4" type="video/mp4" />
+              <source src="/hero-bg.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-[#020617] to-[#0f172a]"></div>
+          )}
           {/* Desktop: Gradient overlay for smooth blend */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-transparent hidden lg:block z-10"></div>
           {/* Mobile: Dark overlay for text readability */}
