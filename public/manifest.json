@@ -1,0 +1,22 @@
+{
+  "name": "CARSELL - 自動車営業ツール",
+  "short_name": "CARSELL",
+  "description": "自動車営業ツール「CARSELL」は、自動車AI営業・自動車AI管理を実現する売り上げAIシステムです。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#255668",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/carsell-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "ja",
+  "dir": "ltr"
+}
+

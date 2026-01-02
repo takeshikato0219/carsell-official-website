@@ -30,6 +30,18 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Breadcrumb Navigation */}
+      <nav aria-label="パンくずリスト" className="sr-only">
+        <ol itemScope itemType="https://schema.org/BreadcrumbList">
+          <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+            <a itemProp="item" href="https://carsell.jp">
+              <span itemProp="name">ホーム</span>
+            </a>
+            <meta itemProp="position" content="1" />
+          </li>
+        </ol>
+      </nav>
+
       {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -38,38 +50,43 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center gap-2">
-              <img src="/carsell-logo.png" alt="CARSELL" className="h-60 w-auto" />
-            </div>
+              <div className="flex items-center gap-2">
+                <img src="/carsell-logo.png" alt="CARSELL - 自動車営業ツール 自動車AI営業・自動車AI管理 売り上げAI" className="h-60 w-auto" />
+              </div>
 
-            <nav className="hidden lg:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-8" aria-label="メインナビゲーション">
               <a
                 href="#problem"
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
+                aria-label="自動車営業の課題セクションへ"
               >
                 課題
               </a>
               <a
                 href="#solution"
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
+                aria-label="自動車AI営業ソリューションセクションへ"
               >
                 ソリューション
               </a>
               <a
                 href="#features"
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
+                aria-label="自動車営業ツールの機能セクションへ"
               >
                 機能
               </a>
               <a
                 href="#pricing"
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
+                aria-label="自動車AI管理システムの料金セクションへ"
               >
                 料金
               </a>
               <a
                 href="#faq"
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
+                aria-label="よくある質問セクションへ"
               >
                 FAQ
               </a>
@@ -92,6 +109,8 @@ export default function Home() {
             muted
             playsInline
             className="w-full h-full object-cover"
+            aria-label="自動車営業ツールCARSELLの紹介動画"
+            preload="metadata"
           >
             <source src="/video-1765107210260.mp4" type="video/mp4" />
           </video>
@@ -112,14 +131,14 @@ export default function Home() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-xl lg:max-w-2xl">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-relaxed text-white tracking-tight">
-              自動車営業を、
+              自動車営業ツールで、
               <br />
-              もっとスマートに。
+              AI営業・AI管理を実現。
               <br />
-              売上を最大化する。
+              売り上げAIで売上を最大化。
             </h1>
             <p className="text-sm sm:text-base lg:text-lg mb-10 text-white/80 leading-relaxed max-w-lg">
-              自動車販売業界に特化した包括的な営業支援システム。顧客管理から見積作成、目標管理まで、営業プロセス全体を一元管理し、業務効率を飛躍的に向上させます。
+              自動車販売業界に特化したAI営業ツール「CARSELL」。自動車AI営業・自動車AI管理を実現する売り上げAIシステムとして、顧客管理から見積作成、目標管理まで、営業プロセス全体を一元管理し、業務効率を飛躍的に向上させます。
             </p>
 
             {/* CTA Buttons */}
@@ -142,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* Problem Section */}
-      <section id="problem" className="relative py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
+      <section id="problem" className="relative py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden" aria-labelledby="problem-heading">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -157,11 +176,11 @@ export default function Home() {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-extrabold mb-6 text-center tracking-tight">
-              その営業管理、まだ手作業ですか？
+            <h2 id="problem-heading" className="text-3xl lg:text-4xl font-extrabold mb-6 text-center tracking-tight">
+              その自動車営業管理、まだ手作業ですか？
             </h2>
             <p className="text-center mb-16 text-base leading-relaxed text-gray-700">
-              展示会で集めたアンケート用紙の山、バラバラに管理される顧客情報、Excel上での煩雑な実績集計。営業担当者は本来の顧客対応に集中できず、管理業務に多くの時間を費やしています。そして見込み顧客のフォロー漏れによる機会損失は、売上に深刻な影響を与えています。
+              展示会で集めたアンケート用紙の山、バラバラに管理される顧客情報、Excel上での煩雑な実績集計。自動車営業ツールがない環境では、営業担当者は本来の顧客対応に集中できず、管理業務に多くの時間を費やしています。そして見込み顧客のフォロー漏れによる機会損失は、売上に深刻な影響を与えています。自動車AI管理を実現する売り上げAIシステムで、これらの課題を解決しましょう。自動車AI営業ツールを導入することで、営業効率が大幅に向上し、売上を最大化できます。
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -206,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* Solution Section */}
-      <section id="solution" className="relative py-20 bg-[#426579] text-white overflow-hidden">
+      <section id="solution" className="relative py-20 bg-[#426579] text-white overflow-hidden" aria-labelledby="solution-heading">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -221,13 +240,13 @@ export default function Home() {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
-              営業プロセス全体を、
+            <h2 id="solution-heading" className="text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
+              自動車AI営業・自動車AI管理で、
               <br />
-              一つのシステムで完結。
+              営業プロセス全体を一つのシステムで完結。
             </h2>
             <p className="text-lg leading-relaxed opacity-90">
-              CARSELLは、顧客管理から見積作成、営業目標管理、チームコミュニケーションまで、自動車販売に必要なすべての業務プロセスを一元管理します。展示会で収集したアンケート用紙をスキャンして即座にデジタル化し、顧客カンバンで進捗を可視化。営業担当者は顧客対応に集中でき、管理者はリアルタイムで営業状況を把握することが可能となります。
+              CARSELLは、自動車営業ツールとして、顧客管理から見積作成、営業目標管理、チームコミュニケーションまで、自動車販売に必要なすべての業務プロセスを一元管理する売り上げAIシステムです。自動車AI営業を実現し、展示会で収集したアンケート用紙をスキャンして即座にデジタル化し、顧客カンバンで進捗を可視化。営業担当者は顧客対応に集中でき、管理者はリアルタイムで営業状況を把握することが可能となります。自動車AI管理により、売上を最大化します。この自動車営業ツールは、自動車ディーラーやカーディーラー向けに最適化された、包括的な営業支援システムです。
             </p>
 
             {/* Sample Dashboard Image */}
@@ -235,7 +254,7 @@ export default function Home() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
                 <img
                   src="/sample-dashboard.png"
-                  alt="最強のカーディーラー用のAIツールがここに誕生"
+                  alt="自動車営業ツール CARSELL - 自動車AI営業・自動車AI管理で売上を最大化する売り上げAIシステムのダッシュボード"
                   className="w-full h-auto"
                 />
               </div>
@@ -253,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="relative py-20 bg-[#4D5269] text-white overflow-hidden">
+      <section id="features" className="relative py-20 bg-[#4D5269] text-white overflow-hidden" aria-labelledby="features-heading">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -269,8 +288,8 @@ export default function Home() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="text-sm tracking-widest mb-6 opacity-80">Core Features</div>
-            <h2 className="text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight leading-relaxed">
-              営業効率を最大化する、主要機能
+            <h2 id="features-heading" className="text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight leading-relaxed">
+              自動車AI営業・自動車AI管理で営業効率を最大化する、主要機能
             </h2>
           </div>
 
@@ -391,7 +410,7 @@ export default function Home() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
-              CARSELLがもたらす、3つの価値
+              自動車営業ツールCARSELLがもたらす、3つの価値
             </h2>
           </div>
 
@@ -402,9 +421,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold mb-4">業務効率の飛躍的向上</h3>
+              <h3 className="text-lg font-bold mb-4">自動車AI管理による業務効率の飛躍的向上</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                顧客情報、見積もり、スケジュール、契約情報をすべて一元管理。アンケートスキャン機能により展示会後のデータ入力が不要になり、営業担当者は顧客対応に集中できます。
+                自動車営業ツールとして、顧客情報、見積もり、スケジュール、契約情報をすべて一元管理。自動車AI管理により、アンケートスキャン機能で展示会後のデータ入力が不要になり、営業担当者は顧客対応に集中できます。この自動車AI営業システムにより、従来の手作業による管理業務から解放され、売上を最大化するための営業活動に専念できます。
               </p>
             </div>
 
@@ -414,9 +433,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold mb-4">データに基づく営業戦略</h3>
+              <h3 className="text-lg font-bold mb-4">売り上げAIによるデータに基づく営業戦略</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                リアルタイムで営業実績を把握し、データに基づいた意思決定が可能に。担当者別・月別の実績を詳細に分析することで、強みと弱みを明確にし、効果的な営業戦略を立案できます。
+                売り上げAIシステムにより、リアルタイムで営業実績を把握し、データに基づいた意思決定が可能に。自動車AI営業ツールとして、担当者別・月別の実績を詳細に分析することで、強みと弱みを明確にし、効果的な営業戦略を立案できます。自動車AI管理機能により、売上を最大化するための最適なタイミングで顧客にアプローチできるようになります。
               </p>
             </div>
 
@@ -541,49 +560,69 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <a href="#contact" className="bg-[#255668] hover:bg-[#1a3d4a] text-white px-10 py-4 rounded-full inline-flex items-center gap-2 text-base transition-all">
+            <a href="#contact" className="bg-[#255668] hover:bg-[#1a3d4a] text-white px-10 py-4 rounded-full inline-flex items-center gap-2 text-base transition-all" aria-label="自動車営業ツールの詳細資料を請求する">
               <span>詳細な料金・機能比較表はこちら（資料請求）</span>
-              <span>→</span>
+              <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-20 bg-gradient-to-br from-blue-50 to-white">
+      <section id="faq" className="py-20 bg-gradient-to-br from-blue-50 to-white" itemScope itemType="https://schema.org/FAQPage">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">よくあるご質問</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              自動車営業ツール「CARSELL」に関するよくある質問にお答えします。自動車AI営業・自動車AI管理、売り上げAIシステムについてのご質問も承っております。
+            </p>
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3">Q. どのような業種に対応していますか？</h3>
-              <p className="text-gray-600">
-                自動車ディーラー、キャンピングカー販売店、輸入車販売店、中古車販売店など、自動車販売に関わるすべての業態に対応しています。新車・中古車問わずご利用いただけます。
-              </p>
-            </div>
+            <article className="bg-white p-8 rounded-2xl shadow-sm" itemScope itemType="https://schema.org/Question">
+              <h3 className="text-lg font-bold mb-3" itemProp="name">Q. どのような業種に対応していますか？</h3>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p className="text-gray-600" itemProp="text">
+                  自動車ディーラー、キャンピングカー販売店、輸入車販売店、中古車販売店など、自動車販売に関わるすべての業態に対応しています。新車・中古車問わずご利用いただけます。この自動車営業ツールは、カーディーラーや自動車ディーラー向けに最適化された、包括的な営業支援システムです。
+                </p>
+              </div>
+            </article>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3">Q. 展示会で使えるアンケートスキャン機能の精度はどのくらいですか？</h3>
-              <p className="text-gray-600">
-                スマートフォンやスキャナーで撮影した紙のアンケート用紙から、顧客情報を高精度で自動抽出します。JPG、PNG、HEIC、PDF形式に対応しており、複数枚を一度にアップロードすることも可能です。
-              </p>
-            </div>
+            <article className="bg-white p-8 rounded-2xl shadow-sm" itemScope itemType="https://schema.org/Question">
+              <h3 className="text-lg font-bold mb-3" itemProp="name">Q. 展示会で使えるアンケートスキャン機能の精度はどのくらいですか？</h3>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p className="text-gray-600" itemProp="text">
+                  スマートフォンやスキャナーで撮影した紙のアンケート用紙から、顧客情報を高精度で自動抽出します。JPG、PNG、HEIC、PDF形式に対応しており、複数枚を一度にアップロードすることも可能です。この自動車AI管理機能により、展示会後のデータ入力作業が大幅に削減され、営業効率が向上します。
+                </p>
+              </div>
+            </article>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3">Q. 導入までにどのくらいの期間がかかりますか？</h3>
-              <p className="text-gray-600">
-                お申し込み後、最短で1週間程度でご利用を開始できます。初期設定やデータ移行のサポートも充実しており、スムーズに導入いただけます。
-              </p>
-            </div>
+            <article className="bg-white p-8 rounded-2xl shadow-sm" itemScope itemType="https://schema.org/Question">
+              <h3 className="text-lg font-bold mb-3" itemProp="name">Q. 導入までにどのくらいの期間がかかりますか？</h3>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p className="text-gray-600" itemProp="text">
+                  お申し込み後、最短で1週間程度でご利用を開始できます。初期設定やデータ移行のサポートも充実しており、スムーズに導入いただけます。自動車AI営業システムの導入により、すぐに営業効率化と売上最大化を実現できます。
+                </p>
+              </div>
+            </article>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-lg font-bold mb-3">Q. 既存のシステムとの連携は可能ですか？</h3>
-              <p className="text-gray-600">
-                エンタープライズプランでは、API連携や外部システム統合が可能です。既存の基幹システムやCRMとの連携についてはお気軽にご相談ください。
-              </p>
-            </div>
+            <article className="bg-white p-8 rounded-2xl shadow-sm" itemScope itemType="https://schema.org/Question">
+              <h3 className="text-lg font-bold mb-3" itemProp="name">Q. 既存のシステムとの連携は可能ですか？</h3>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p className="text-gray-600" itemProp="text">
+                  エンタープライズプランでは、API連携や外部システム統合が可能です。既存の基幹システムやCRMとの連携についてはお気軽にご相談ください。この自動車営業ツールは、既存の業務システムと連携することで、より包括的な営業管理を実現します。
+                </p>
+              </div>
+            </article>
+
+            <article className="bg-white p-8 rounded-2xl shadow-sm" itemScope itemType="https://schema.org/Question">
+              <h3 className="text-lg font-bold mb-3" itemProp="name">Q. 自動車AI営業・自動車AI管理の具体的な機能は何ですか？</h3>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p className="text-gray-600" itemProp="text">
+                  自動車AI営業機能として、顧客の購買傾向を分析し、最適なタイミングでのアプローチを提案します。自動車AI管理機能では、営業実績の自動集計、目標達成率の可視化、売上予測などを行います。売り上げAIシステムにより、データに基づいた営業戦略の立案が可能になります。
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -704,10 +743,10 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-12 mb-10">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <img src="/carsell-logo.png" alt="CARSELL" className="h-60 w-auto" />
+                <img src="/carsell-logo.png" alt="CARSELL - 自動車営業ツール 自動車AI営業・自動車AI管理 売り上げAI" className="h-60 w-auto" />
               </div>
               <p className="text-sm text-gray-600">
-                自動車販売業界に特化した包括的な営業支援システム
+                自動車販売業界に特化した包括的な営業支援システム。自動車AI営業・自動車AI管理を実現する売り上げAIシステムです。自動車営業ツールとして、カーディーラーや自動車ディーラーの営業効率化と売上最大化をサポートします。
               </p>
             </div>
 

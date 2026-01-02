@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://carsell.jp/sitemap.xml
+
+# Disallow admin and private areas if any
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow important pages
+Allow: /
+Allow: /#problem
+Allow: /#solution
+Allow: /#features
+Allow: /#pricing
+Allow: /#faq
+Allow: /#contact
+
