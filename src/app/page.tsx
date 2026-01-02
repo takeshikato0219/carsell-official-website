@@ -105,7 +105,7 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-20">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2" style={{ marginTop: '5px' }}>
                 <img src="/carsell-logo.png" alt="CARSELL - 自動車営業ツール 自動車AI営業・自動車AI管理 売り上げAI" className="h-60 w-auto" />
               </div>
 
@@ -163,9 +163,9 @@ export default function Home() {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover z-0"
             aria-label="自動車営業ツールCARSELLの紹介動画"
-            preload="metadata"
+            preload="auto"
           >
             <source src="/video-1765107210260.mp4" type="video/mp4" />
           </video>
