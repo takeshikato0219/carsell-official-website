@@ -849,7 +849,7 @@ export default function Home() {
                     onChange={(e) => setFormData({...formData, privacy: e.target.checked})}
                   />
                   <label htmlFor="privacy" className="text-sm text-gray-600">
-                    <a href="#" className="text-[#255668] underline">プライバシーポリシー</a>に同意する
+                    <button type="button" className="text-[#255668] underline">プライバシーポリシー</button>に同意する
                   </label>
                 </div>
 
@@ -911,9 +911,9 @@ export default function Home() {
 
             <div>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="hover:text-[#426579] transition-colors">プライバシーポリシー</a></li>
-                <li><a href="#" className="hover:text-[#426579] transition-colors">利用規約</a></li>
-                <li><a href="#" className="hover:text-[#426579] transition-colors">会社概要</a></li>
+                <li><button type="button" className="hover:text-[#426579] transition-colors text-left">プライバシーポリシー</button></li>
+                <li><button type="button" className="hover:text-[#426579] transition-colors text-left">利用規約</button></li>
+                <li><button type="button" className="hover:text-[#426579] transition-colors text-left">会社概要</button></li>
               </ul>
             </div>
           </div>
