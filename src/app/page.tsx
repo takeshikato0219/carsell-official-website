@@ -185,7 +185,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-xl lg:max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-relaxed text-white tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-relaxed text-white tracking-tight">
               自動車営業ツールで、
               <br />
               AI営業・AI管理を実現。
@@ -231,7 +231,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h2 id="problem-heading" className="text-3xl lg:text-4xl font-extrabold mb-6 text-center tracking-tight">
+            <h2 id="problem-heading" className="text-2xl lg:text-3xl font-extrabold mb-6 text-center tracking-tight">
               その自動車営業管理、まだ手作業ですか？
             </h2>
             <p className="text-center mb-16 text-base leading-relaxed text-gray-700">
@@ -295,7 +295,7 @@ export default function Home() {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 id="solution-heading" className="text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
+            <h2 id="solution-heading" className="text-2xl lg:text-3xl font-extrabold mb-6 tracking-tight">
               自動車AI営業・自動車AI管理で、
               <br />
               営業プロセス全体を一つのシステムで完結。
@@ -314,10 +314,10 @@ export default function Home() {
                 />
               </div>
               <div className="text-center mt-8">
-                <p className="text-2xl lg:text-3xl font-extrabold opacity-95 mb-3">
+                <p className="text-xl lg:text-2xl font-extrabold opacity-95 mb-3">
                   最強のカーディーラー用のAIツールがここに誕生。
                 </p>
-                <p className="text-xl lg:text-2xl font-bold opacity-90">
+                <p className="text-lg lg:text-xl font-bold opacity-90">
                   全てをここに完結できる（大幅カスタマイズ可能）
                 </p>
               </div>
@@ -343,7 +343,7 @@ export default function Home() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="text-sm tracking-widest mb-6 opacity-80">Core Features</div>
-            <h2 id="features-heading" className="text-3xl lg:text-4xl font-extrabold mb-10 tracking-tight leading-relaxed">
+            <h2 id="features-heading" className="text-2xl lg:text-3xl font-extrabold mb-10 tracking-tight leading-relaxed">
               自動車AI営業・自動車AI管理で営業効率を最大化する、主要機能
             </h2>
           </div>
@@ -421,7 +421,7 @@ export default function Home() {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
+              <h2 className="text-2xl lg:text-3xl font-extrabold mb-6 tracking-tight">
                 チーム全体の連携を強化する、
                 <br />
                 充実のコミュニケーション機能。
@@ -464,7 +464,7 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
+            <h2 className="text-2xl lg:text-3xl font-extrabold mb-4 tracking-tight">
               自動車営業ツールCARSELLがもたらす、3つの価値
             </h2>
           </div>
@@ -513,7 +513,7 @@ export default function Home() {
       <section id="pricing" className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">
+            <h2 className="text-2xl lg:text-3xl font-extrabold mb-4 tracking-tight">
               ニーズに合わせて選べる柔軟な料金体系
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
@@ -627,7 +627,7 @@ export default function Home() {
       <section id="faq" className="py-20 bg-gradient-to-br from-blue-50 to-white" itemScope itemType="https://schema.org/FAQPage">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">よくあるご質問</h2>
+            <h2 className="text-2xl lg:text-3xl font-extrabold mb-4 tracking-tight">よくあるご質問</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               自動車営業ツール「CARSELL」に関するよくある質問にお答えします。自動車AI営業・自動車AI管理、売り上げAIシステムについてのご質問も承っております。
             </p>
@@ -687,7 +687,7 @@ export default function Home() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-extrabold mb-6 tracking-tight">
+              <h2 className="text-2xl lg:text-3xl font-extrabold mb-6 tracking-tight">
                 今すぐ、営業DXの第一歩を。
               </h2>
               <p className="text-lg opacity-90 leading-relaxed">
