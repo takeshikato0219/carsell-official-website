@@ -6,9 +6,9 @@ frontend:
         - echo "Installing Git LFS..."
         - git lfs install
         - echo "Pulling Git LFS files..."
-        - git lfs pull --include="*.mp4"
+        - 'git lfs pull --include="*.mp4"'
         - echo "Verifying video files..."
-        - ls -lh public/*.mp4 2>/dev/null || echo "Warning: Video files not found"
+        - 'ls -lh public/*.mp4 2>/dev/null || echo "Warning: Video files not found"'
         - echo "Installing dependencies..."
         - npm ci
     build:
@@ -16,7 +16,7 @@ frontend:
         - echo "Building Next.js application..."
         - npm run build
         - echo "Verifying build output..."
-        - find .next -name "*.mp4" -type f 2>/dev/null | head -5 || echo "No MP4 files found in build output"
+        - 'find .next -name "*.mp4" -type f 2>/dev/null | head -5 || echo "No MP4 files found in build output"'
   artifacts:
     baseDirectory: .next
     files:
