@@ -1,9 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
   const [formData, setFormData] = useState({
     company: "",
     name: "",
@@ -22,10 +25,62 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    // EmailJSの初期化
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_47wjggu";
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "62fy23UHQA1peUUj7";
+    emailjs.init(publicKey);
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // フォーム送信処理
-    console.log(formData);
+    
+    if (!formData.privacy) {
+      alert("プライバシーポリシーに同意してください。");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_47wjggu";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_66essgm";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "62fy23UHQA1peUUj7";
+
+      const templateParams = {
+        company: formData.company,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        inquiryType: formData.inquiryType,
+        message: formData.message,
+        to_name: "CARSELL",
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      setSubmitStatus("success");
+      setFormData({
+        company: "",
+        name: "",
+        email: "",
+        phone: "",
+        inquiryType: "",
+        message: "",
+        privacy: false,
+      });
+
+      // 3秒後に成功メッセージを非表示
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } catch (error) {
+      console.error("EmailJS送信エラー:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -725,11 +780,26 @@ export default function Home() {
                   </label>
                 </div>
 
+                {submitStatus === "success" && (
+                  <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg text-sm">
+                    お問い合わせありがとうございます。送信が完了しました。
+                  </div>
+                )}
+
+                {submitStatus === "error" && (
+                  <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-sm">
+                    送信に失敗しました。しばらく時間をおいて再度お試しください。
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-[#255668] hover:bg-[#1a3d4a] text-white py-4 rounded-full font-medium transition-all"
+                  disabled={isSubmitting}
+                  className={`w-full bg-[#255668] hover:bg-[#1a3d4a] text-white py-4 rounded-full font-medium transition-all ${
+                    isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
                 >
-                  送信する
+                  {isSubmitting ? "送信中..." : "送信する"}
                 </button>
               </div>
             </form>
