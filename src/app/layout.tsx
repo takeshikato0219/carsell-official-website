@@ -5,7 +5,7 @@ import Script from "next/script";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://carsell.jp"),
+  metadataBase: new URL("https://www.caesell.net"),
   title: {
     default: "自動車営業ツール CARSELL | 自動車AI営業・自動車AI管理で売上を最大化",
     template: "%s | CARSELL - 自動車営業ツール",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "AI営業管理",
     "売上最大化システム",
   ],
-  authors: [{ name: "CARSELL", url: "https://carsell.jp" }],
+  authors: [{ name: "CARSELL", url: "https://www.caesell.net" }],
   creator: "CARSELL",
   publisher: "CARSELL",
   robots: {
@@ -53,10 +53,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ja_JP",
     siteName: "CARSELL",
-    url: "https://carsell.jp",
+    url: "https://www.caesell.net",
     images: [
       {
-        url: "https://carsell.jp/carsell-logo.png",
+        url: "https://www.caesell.net/carsell-logo.png",
         width: 1200,
         height: 630,
         alt: "CARSELL - 自動車営業ツール",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "自動車営業ツール CARSELL | 自動車AI営業・自動車AI管理で売上を最大化",
     description: "自動車営業ツール「CARSELL」は、自動車AI営業・自動車AI管理を実現する売り上げAIシステムです。",
-    images: ["https://carsell.jp/carsell-logo.png"],
+    images: ["https://www.caesell.net/carsell-logo.png"],
     creator: "@carsell",
   },
   alternates: {
@@ -92,12 +92,12 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://carsell.jp/#organization",
+        "@id": "https://www.caesell.net/#organization",
         name: "CARSELL",
-        url: "https://carsell.jp",
+        url: "https://www.caesell.net",
         logo: {
           "@type": "ImageObject",
-          url: "https://carsell.jp/carsell-logo.png",
+          url: "https://www.caesell.net/carsell-logo.png",
           width: 600,
           height: 200,
         },
@@ -128,7 +128,7 @@ export default function RootLayout({
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://carsell.jp/#software",
+        "@id": "https://www.caesell.net/#software",
         name: "CARSELL",
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
@@ -179,18 +179,18 @@ export default function RootLayout({
       },
       {
         "@type": "WebSite",
-        "@id": "https://carsell.jp/#website",
-        url: "https://carsell.jp",
+        "@id": "https://www.caesell.net/#website",
+        url: "https://www.caesell.net",
         name: "CARSELL - 自動車営業ツール",
         description: "自動車営業ツール「CARSELL」は、自動車AI営業・自動車AI管理を実現する売り上げAIシステムです。",
         publisher: {
-          "@id": "https://carsell.jp/#organization",
+          "@id": "https://www.caesell.net/#organization",
         },
         potentialAction: {
           "@type": "SearchAction",
           target: {
             "@type": "EntryPoint",
-            urlTemplate: "https://carsell.jp/search?q={search_term_string}",
+            urlTemplate: "https://www.caesell.net/search?q={search_term_string}",
           },
           "query-input": "required name=search_term_string",
         },
@@ -198,19 +198,19 @@ export default function RootLayout({
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://carsell.jp/#breadcrumb",
+        "@id": "https://www.caesell.net/#breadcrumb",
         itemListElement: [
           {
             "@type": "ListItem",
             position: 1,
             name: "ホーム",
-            item: "https://carsell.jp",
+            item: "https://www.caesell.net",
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://carsell.jp/#faq",
+        "@id": "https://www.caesell.net/#faq",
         mainEntity: [
           {
             "@type": "Question",
@@ -262,8 +262,8 @@ export default function RootLayout({
         {googleSiteVerification && (
           <meta name="google-site-verification" content={googleSiteVerification} />
         )}
-        <link rel="canonical" href="https://carsell.jp" />
-        <link rel="alternate" hrefLang="ja" href="https://carsell.jp" />
+        <link rel="canonical" href="https://www.caesell.net" />
+        <link rel="alternate" hrefLang="ja" href="https://www.caesell.net" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/carsell-logo.png" />

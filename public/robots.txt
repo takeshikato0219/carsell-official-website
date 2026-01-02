@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://carsell.jp/sitemap.xml
+Sitemap: https://www.caesell.net/sitemap.xml
 
 # Disallow admin and private areas if any
 Disallow: /api/
