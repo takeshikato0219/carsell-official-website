@@ -82,14 +82,15 @@ export default function Home() {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    // EmailJS設定
+    // Service ID: service_47wjggu
+    // Template ID: template_66essgm (カーセルContact Us)
+    // Public Key: 62fy23UHQA1peUUj7
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_47wjggu";
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_66essgm";
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "62fy23UHQA1peUUj7";
+
     try {
-      // EmailJS設定
-      // Service ID: service_47wjggu
-      // Template ID: template_66essgm (カーセルContact Us)
-      // Public Key: 62fy23UHQA1peUUj7
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_47wjggu";
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_66essgm";
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "62fy23UHQA1peUUj7";
 
       const templateParams = {
         company: formData.company,
