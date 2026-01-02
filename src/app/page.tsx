@@ -71,6 +71,16 @@ export default function Home() {
     checkVideo();
   }, []);
 
+  const scrollToSection = (sectionId: string, e?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+    if (e) {
+      e.preventDefault();
+    }
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -166,46 +176,46 @@ export default function Home() {
               </div>
 
             <nav className="hidden lg:flex items-center space-x-8" aria-label="メインナビゲーション">
-              <a
-                href="#problem"
+              <button
+                onClick={(e) => scrollToSection("problem", e)}
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
                 aria-label="自動車営業の課題セクションへ"
               >
                 課題
-              </a>
-              <a
-                href="#solution"
+              </button>
+              <button
+                onClick={(e) => scrollToSection("solution", e)}
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
                 aria-label="自動車AI営業ソリューションセクションへ"
               >
                 ソリューション
-              </a>
-              <a
-                href="#features"
+              </button>
+              <button
+                onClick={(e) => scrollToSection("features", e)}
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
                 aria-label="自動車営業ツールの機能セクションへ"
               >
                 機能
-              </a>
-              <a
-                href="#pricing"
+              </button>
+              <button
+                onClick={(e) => scrollToSection("pricing", e)}
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
                 aria-label="自動車AI管理システムの料金セクションへ"
               >
                 料金
-              </a>
-              <a
-                href="#faq"
+              </button>
+              <button
+                onClick={(e) => scrollToSection("faq", e)}
                 className="text-sm font-medium text-gray-700 hover:text-[#426579] transition-colors"
                 aria-label="よくある質問セクションへ"
               >
                 FAQ
-              </a>
+              </button>
             </nav>
 
-            <a href="#contact" className="rounded-full border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-2.5 text-sm font-medium transition-all">
+            <button onClick={(e) => scrollToSection("contact", e)} className="rounded-full border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-2.5 text-sm font-medium transition-all">
               お問い合わせ
-            </a>
+            </button>
           </div>
         </div>
       </header>
@@ -261,12 +271,12 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#contact" className="bg-[#255668] hover:bg-[#1a3d4a] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-center font-medium transition-all shadow-lg text-sm sm:text-base">
+              <button onClick={(e) => scrollToSection("contact", e)} className="bg-[#255668] hover:bg-[#1a3d4a] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-center font-medium transition-all shadow-lg text-sm sm:text-base">
                 3分でわかる資料請求（無料）
-              </a>
-              <a href="#contact" className="border-2 border-white text-white hover:bg-white hover:text-[#020617] px-6 sm:px-8 py-3 sm:py-4 rounded-full text-center font-medium transition-all text-sm sm:text-base">
+              </button>
+              <button onClick={(e) => scrollToSection("contact", e)} className="border-2 border-white text-white hover:bg-white hover:text-[#020617] px-6 sm:px-8 py-3 sm:py-4 rounded-full text-center font-medium transition-all text-sm sm:text-base">
                 専門家に相談する
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -678,10 +688,10 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <a href="#contact" className="bg-[#255668] hover:bg-[#1a3d4a] text-white px-10 py-4 rounded-full inline-flex items-center gap-2 text-base transition-all" aria-label="自動車営業ツールの詳細資料を請求する">
+            <button onClick={(e) => scrollToSection("contact", e)} className="bg-[#255668] hover:bg-[#1a3d4a] text-white px-10 py-4 rounded-full inline-flex items-center gap-2 text-base transition-all" aria-label="自動車営業ツールの詳細資料を請求する">
               <span>詳細な料金・機能比較表はこちら（資料請求）</span>
               <span aria-hidden="true">→</span>
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -885,17 +895,17 @@ export default function Home() {
 
             <div>
               <ul className="space-y-3 text-sm">
-                <li><a href="#problem" className="hover:text-[#426579] transition-colors">課題</a></li>
-                <li><a href="#solution" className="hover:text-[#426579] transition-colors">ソリューション</a></li>
-                <li><a href="#features" className="hover:text-[#426579] transition-colors">機能</a></li>
+                <li><button onClick={(e) => scrollToSection("problem", e)} className="hover:text-[#426579] transition-colors text-left">課題</button></li>
+                <li><button onClick={(e) => scrollToSection("solution", e)} className="hover:text-[#426579] transition-colors text-left">ソリューション</button></li>
+                <li><button onClick={(e) => scrollToSection("features", e)} className="hover:text-[#426579] transition-colors text-left">機能</button></li>
               </ul>
             </div>
 
             <div>
               <ul className="space-y-3 text-sm">
-                <li><a href="#pricing" className="hover:text-[#426579] transition-colors">料金</a></li>
-                <li><a href="#faq" className="hover:text-[#426579] transition-colors">FAQ</a></li>
-                <li><a href="#contact" className="hover:text-[#426579] transition-colors">お問い合わせ</a></li>
+                <li><button onClick={(e) => scrollToSection("pricing", e)} className="hover:text-[#426579] transition-colors text-left">料金</button></li>
+                <li><button onClick={(e) => scrollToSection("faq", e)} className="hover:text-[#426579] transition-colors text-left">FAQ</button></li>
+                <li><button onClick={(e) => scrollToSection("contact", e)} className="hover:text-[#426579] transition-colors text-left">お問い合わせ</button></li>
               </ul>
             </div>
 
