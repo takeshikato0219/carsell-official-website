@@ -33,6 +33,42 @@ export default function Home() {
     emailjs.init(publicKey);
   }, []);
 
+  useEffect(() => {
+    // 動画ファイルの存在確認（デバッグ用）
+    const checkVideo = () => {
+      const video1 = new Image();
+      video1.onload = () => console.log("Video file 1 exists");
+      video1.onerror = () => console.log("Video file 1 not found");
+      // MP4ファイルはImageで直接チェックできないため、fetchで確認
+      fetch("/video-1765107210260.mp4", { method: "HEAD" })
+        .then((res) => {
+          if (res.ok) {
+            console.log("Video file 1 exists and is accessible");
+          } else {
+            console.log("Video file 1 not accessible:", res.status);
+            setVideoError(true);
+          }
+        })
+        .catch((err) => {
+          console.log("Video file 1 check failed:", err);
+          setVideoError(true);
+        });
+      
+      fetch("/hero-bg.mp4", { method: "HEAD" })
+        .then((res) => {
+          if (res.ok) {
+            console.log("Video file 2 exists and is accessible");
+          } else {
+            console.log("Video file 2 not accessible:", res.status);
+          }
+        })
+        .catch((err) => {
+          console.log("Video file 2 check failed:", err);
+        });
+    };
+    checkVideo();
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     

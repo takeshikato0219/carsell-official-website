@@ -3,10 +3,19 @@ frontend:
   phases:
     preBuild:
       commands:
+        - git lfs install || echo "Git LFS install failed"
+        - git lfs pull || echo "Git LFS pull failed"
+        - echo "Checking video files..."
+        - ls -lh public/*.mp4 2>/dev/null || echo "Video files not found in public directory"
+        - echo "Checking .gitattributes..."
+        - cat .gitattributes || echo ".gitattributes not found"
         - npm ci
     build:
       commands:
+        - echo "Building Next.js app..."
         - npm run build
+        - echo "Checking built files..."
+        - ls -lh .next/static 2>/dev/null || echo "Build output not found"
   artifacts:
     baseDirectory: .next
     files:
